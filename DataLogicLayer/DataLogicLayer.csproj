@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DLLFacade.cs" />
+    <Compile Include="Entities\Person.cs" />
     <Compile Include="IPersonManager.cs" />
     <Compile Include="Managers\PersonManagerFakeDB.cs" />
     <Compile Include="Managers\ProxyPersonManager.cs" />

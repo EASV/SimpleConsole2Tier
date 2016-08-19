@@ -5,9 +5,9 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
+using DataLogicLayer.Entities;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using SpamEntities;
 
 namespace DataLogicLayer.Managers
 {

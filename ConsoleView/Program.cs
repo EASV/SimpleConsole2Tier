@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataLogicLayer;
-using SpamEntities;
+using DataLogicLayer.Entities;
 
 namespace ConsoleView
 {
@@ -14,18 +14,19 @@ namespace ConsoleView
         static void Main(string[] args)
         {
             IPersonManager manager = new DLLFacade().GetPersonManager();
-            foreach (var person in manager.GetPersons())
+            var persons = manager.GetPersons();
+            
+            foreach (var person in persons)
             {
                 Console.WriteLine(person);
             }
-
+            
             manager.AddPerson(new Person()
             {
                 Name = "Kurt"
             });
             
-
-            foreach (var person in manager.GetPersons())
+            foreach (var person in persons)
             {
                 Console.WriteLine(person);
             }
