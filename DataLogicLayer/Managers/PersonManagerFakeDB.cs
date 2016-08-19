@@ -11,7 +11,7 @@ namespace DataLogicLayer.Managers
     {
         private static int Id = 1;
         
-        List<Person> _persons = new List<Person>();
+        List<Person> persons = new List<Person>();
 
         public PersonManagerFakeDb()
         {
@@ -22,28 +22,59 @@ namespace DataLogicLayer.Managers
 
         public List<Person> GetPersons()
         {
-            return new List<Person>(_persons);
+            return new List<Person>(persons);
         }
 
         public Person AddPerson(Person p)
         {
-            _persons.Add(p);
+            persons.Add(p);
             p.Id = Id++;
             return p;
         }
 
-        /*public void DeletePerson(int id)
+        public bool Delete(Person p)
         {
-            persons.RemoveAll(x => x.Id == id);
-        }*/
+            /*foreach (var person in persons)
+            {
+                if (person.Id == p.Id)
+                {
+                    persons.Remove(person);
 
-        /*public void UpdatePerson(Person person)
+                }
+
+            }*/
+
+
+
+            persons.RemoveAll(person => person.Id == p.Id);
+
+
+            return persons.FirstOrDefault(person => person.Id == p.Id) == null;
+        }
+
+        public Person GetPerson(int id)
+        {
+            foreach (var person in persons)
+            {
+                if (person.Id == id)
+                {
+                    return person;
+                }
+            }
+            //return null;
+            return persons.FirstOrDefault(person => person.Id == id);
+        }
+        
+
+        /*public Person UpdatePerson(Person person)
         {
             if (person == null) new NullReferenceException();
 
             var personInDb = persons.FirstOrDefault(x => x.Id == person.Id);
 
             if (personInDb != null) personInDb.Name = person.Name;
+
+            return person;
         }*/
     }
 }

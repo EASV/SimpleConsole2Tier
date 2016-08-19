@@ -23,5 +23,19 @@ namespace DataLogicLayer
         /// <param name="p"></param>
         /// <returns>Person</returns>
         Person AddPerson(Person p);
+
+        /// <summary>
+        /// Delete the person
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        bool Delete(Person p);
+
+        /// <summary>
+        /// Gets a single person by finding his Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Person GetPerson(int id);
     }
 }
