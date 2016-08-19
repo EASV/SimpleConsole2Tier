@@ -38,5 +38,20 @@ namespace DataLogicLayer.Managers
                 return response.Content.ReadAsAsync<Person>().Result;
             }
         }
+
+        public bool Delete(Person p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Person GetPerson(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Person UpdatePerson(Person person)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

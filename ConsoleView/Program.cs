@@ -14,19 +14,26 @@ namespace ConsoleView
         static void Main(string[] args)
         {
             IPersonManager manager = new DLLFacade().GetPersonManager();
-            var persons = manager.GetPersons();
             
-            foreach (var person in persons)
+            foreach (var person in manager.GetPersons())
             {
                 Console.WriteLine(person);
             }
             
-            manager.AddPerson(new Person()
+            var kurt = manager.AddPerson(new Person()
             {
                 Name = "Kurt"
             });
             
-            foreach (var person in persons)
+            foreach (var person in manager.GetPersons())
+            {
+                Console.WriteLine(person);
+            }
+
+            kurt.Name = "JohnnyMacPants";
+            manager.UpdatePerson(kurt);
+
+            foreach (var person in manager.GetPersons())
             {
                 Console.WriteLine(person);
             }

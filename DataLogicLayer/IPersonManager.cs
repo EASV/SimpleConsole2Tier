@@ -37,5 +37,12 @@ namespace DataLogicLayer
         /// <param name="id"></param>
         /// <returns></returns>
         Person GetPerson(int id);
+
+        /// <summary>
+        /// Updates a person I like documenting stuff so funny..
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
+        Person UpdatePerson(Person person);
     }
 }

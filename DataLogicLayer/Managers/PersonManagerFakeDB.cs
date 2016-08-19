@@ -54,17 +54,24 @@ namespace DataLogicLayer.Managers
 
         public Person GetPerson(int id)
         {
-            foreach (var person in persons)
+            /*foreach (var person in persons)
             {
                 if (person.Id == id)
                 {
                     return person;
                 }
-            }
+            }*/
             //return null;
             return persons.FirstOrDefault(person => person.Id == id);
         }
-        
+
+        public Person UpdatePerson(Person p)
+        {
+            var personFound = persons.FirstOrDefault(person => person.Id == p.Id);
+            personFound.Name = p.Name;
+            return personFound;
+        }
+
 
         /*public Person UpdatePerson(Person person)
         {
