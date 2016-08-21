@@ -15,9 +15,9 @@ namespace DataLogicLayer.Managers
 
         public PersonManagerFakeDb()
         {
-            AddPerson(new Person{Name = "Lars"});
+            AddPerson(new Person{Name = "Lars", Email = "larsb@namnam.dk"});
 
-            AddPerson(new Person{Name = "Ole"});
+            AddPerson(new Person{Name = "Ole", Email = "ILoveBigBirds@zoo.com"});
         }
 
         public List<Person> GetPersons()

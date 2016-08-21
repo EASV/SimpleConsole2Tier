@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SpamEntities")]
+[assembly: AssemblyTitle("PersonManagerWindowsForms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SpamEntities")]
+[assembly: AssemblyProduct("PersonManagerWindowsForms")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1681a806-698d-4f81-a24c-e090384d22e3")]
+[assembly: Guid("a058660e-a453-4bc4-8607-48f09783dbeb")]
 
 // Version information for an assembly consists of the following four values:
 //

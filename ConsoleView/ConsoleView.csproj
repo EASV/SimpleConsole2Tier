@@ -54,10 +54,6 @@
       <Project>{393adfb4-5c1c-4e0d-8da4-0d9510ca8789}</Project>
       <Name>DataLogicLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SpamEntities\SpamEntities.csproj">
-      <Project>{1681a806-698d-4f81-a24c-e090384d22e3}</Project>
-      <Name>SpamEntities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
