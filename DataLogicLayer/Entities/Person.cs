@@ -14,10 +14,9 @@ namespace DataLogicLayer.Entities
         TheOthers
     }
     
-    public class Person
+    public class Person : Entity
     {
         
-        public int Id { get; internal set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
