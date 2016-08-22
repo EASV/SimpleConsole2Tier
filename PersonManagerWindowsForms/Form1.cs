@@ -21,7 +21,7 @@ namespace PersonManagerWindowsForms
             InitializeComponent();
             var pm = new DLLFacade().GetPersonManager();
 
-           /* var bindingList = new BindingList<Person>(pm.GetPersons());
+           /* var bindingList = new BindingList<Person>(pm.Get());
             var source = new BindingSource(bindingList, null);
             personDataGrid.DataSource = source;
             */
