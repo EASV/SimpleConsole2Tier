@@ -16,8 +16,24 @@ namespace DataLogicLayer.Entities
     
     public class Person : Entity
     {
-        
-        public string Name { get; set; }
+        public delegate void PropertyChanged(string propName, object oldValue, object newValue);
+
+        public event PropertyChanged Propchanged;
+
+        private string _name;
+        public string Name {
+            get { return _name; }
+            set
+            {
+                var oldValue = _name;
+                _name = value;
+                Propchanged?.Invoke("Name", oldValue, _name);
+               /* if (Propchanged != null)
+                {
+                    Propchanged("Name", oldValue, _name);
+                }*/
+            } 
+        }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }

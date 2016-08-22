@@ -7,31 +7,36 @@ using DataLogicLayer.Entities;
 
 namespace DataLogicLayer.Managers
 {
-    class PersonManagerFakeDb : IPersonManager
+    class PersonManagerFakeDb : AbstractPersonManager
     {
         private static int Id = 1;
         
         List<Person> persons = new List<Person>();
-
+       
         public PersonManagerFakeDb()
         {
-            AddPerson(new Person{Name = "Lars", Email = "larsb@namnam.dk"});
+            Add(new Person{Name = "Lars", Email = "larsb@namnam.dk", Gender = Gender.Male });
 
-            AddPerson(new Person{Name = "Ole", Email = "ILoveBigBirds@zoo.com"});
+            Add(new Person{Name = "Ole", Email = "ILoveBigBirds@zoo.com", Gender = Gender.Male });
+
+            Add(new Person { Name = "Gurli", Email = "BoomBoomBOOM@letMeHearUSayAOOO.com", Gender = Gender.Female});
         }
 
+        override
         public List<Person> GetPersons()
         {
             return new List<Person>(persons);
         }
 
-        public Person AddPerson(Person p)
+        sealed override
+        internal Person Add(Person p)
         {
             persons.Add(p);
             p.Id = Id++;
             return p;
         }
 
+        override
         public bool Delete(Person p)
         {
             /*foreach (var person in persons)
@@ -52,6 +57,7 @@ namespace DataLogicLayer.Managers
             return persons.FirstOrDefault(person => person.Id == p.Id) == null;
         }
 
+        override
         public Person GetPerson(int id)
         {
             /*foreach (var person in persons)
@@ -65,6 +71,7 @@ namespace DataLogicLayer.Managers
             return persons.FirstOrDefault(person => person.Id == id);
         }
 
+        override
         public Person UpdatePerson(Person p)
         {
             var personFound = persons.FirstOrDefault(person => person.Id == p.Id);

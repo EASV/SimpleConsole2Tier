@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractPersonManager.cs" />
     <Compile Include="DLLFacade.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Person.cs" />
