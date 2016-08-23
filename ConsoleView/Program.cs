@@ -11,8 +11,7 @@ namespace ConsoleView
 {
     class Program
     {
-        public delegate bool FilterDelegate(Person p);
-
+        
         static void Main(string[] args)
         {
             IPersonManager manager = new DLLFacade().GetPersonManager();
@@ -26,25 +25,29 @@ namespace ConsoleView
                 Name = "Kurt"
             });
             
-            //kurt.Propchanged += Propchange;
-
+            kurt.Propchanged += Propchange;
+            
             kurt.Name = "JohnnyMacPants";
             manager.UpdatePerson(kurt);
             
             DisplayPeople("Ladies:", manager.GetPersons(), IsFemale);
             DisplayPeople("Gents:", manager.GetPersons(), IsMale);
 
-
             Console.ReadLine();
         }
-        
+
+       
+
         /// <summary>
         /// A method to filter out the people you need
         /// </summary>
         /// <param name="people">A list of people</param>
         /// <param name="filter">A filter</param>
         /// <returns>A filtered list</returns>
-        static void DisplayPeople(string title, List<Person> people, FilterDelegate filter)
+        public delegate bool FilterDelegate(Person p);
+        static void DisplayPeople(string title, 
+            List<Person> people, 
+            FilterDelegate filter)
         {
             Console.WriteLine(title);
 
