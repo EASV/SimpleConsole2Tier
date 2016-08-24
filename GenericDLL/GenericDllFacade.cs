@@ -7,6 +7,23 @@ namespace GenericDLL
     {
         public IManager<Person> GetPersonManager()
         {
+            /*Person:
+            Id
+            Email
+            BirthDate
+            Name
+            Address
+
+            Address:
+            Id
+            Street
+            City
+            Zip
+            Number*/
+            
+
+
+
             return new PersonManagerFakeDb();
         }
     }

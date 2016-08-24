@@ -14,7 +14,8 @@ namespace DataLogicLayer
         
         public IPersonManager GetPersonManager()
         {
-            return new PersonManagerFakeDb();
+            return new PersonManagerLocalFile();
+            //return new PersonManagerFakeDb();
             //return new ProxyPersonManager();
         }
         

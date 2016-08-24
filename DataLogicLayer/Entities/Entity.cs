@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLogicLayer.Entities
 {
+    [Serializable]
     public class Entity
     {
         

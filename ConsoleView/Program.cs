@@ -22,12 +22,13 @@ namespace ConsoleView
 
             var kurt = manager.AddPerson(new Person()
             {
-                Name = "Kurt"
+                Name = "Gina",
+                Gender = Gender.Female
             });
             
-            kurt.Propchanged += Propchange;
+            //kurt.Propchanged += Propchange;
             
-            kurt.Name = "JohnnyMacPants";
+            kurt.Name = "Johnny";
             manager.UpdatePerson(kurt);
             
             DisplayPeople("Ladies:", manager.GetPersons(), IsFemale);

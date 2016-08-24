@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace DataLogicLayer.Entities
 {
+    [Serializable]
     public enum Gender
     {
         Male,
         Female,
         TheOthers
     }
-    
+    [Serializable]
     public class Person : Entity
     {
         public delegate void 
@@ -40,6 +41,8 @@ namespace DataLogicLayer.Entities
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
+
+        public Address Address { get; set; }
 
         public override string ToString()
         {
